@@ -355,7 +355,9 @@ const TetrisGame = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <h1 className="text-4xl font-bold mb-6 text-blue-400">TETRIS</h1>
+            <a href="https://github.com/NuclearMissile/react-tetris" target="_blank" rel="noreferrer noopener">
+                <h1 className="text-4xl font-bold mb-6 text-blue-400">TETRIS</h1>
+            </a>
 
             <div className="flex gap-8">
                 {/* Game Board */}
