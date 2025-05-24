@@ -379,7 +379,7 @@ const TetrisGame = () => {
 
                     {/* Game Over Overlay */}
                     {gameStatus === 'gameOver' && (
-                        <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
                             <div className="text-center">
                                 <h2 className="text-3xl font-bold text-red-400 mb-4">GAME OVER</h2>
                             </div>
@@ -388,7 +388,7 @@ const TetrisGame = () => {
 
                     {/* Pause Overlay */}
                     {gameStatus === 'paused' && (
-                        <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
                             <h2 className="text-3xl font-bold text-yellow-400">PAUSED</h2>
                         </div>
                     )}
