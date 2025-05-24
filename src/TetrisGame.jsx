@@ -1,4 +1,5 @@
 import {useCallback, useEffect, useRef, useState} from 'react';
+import SwipeHandler from "./SwipeHandler.jsx";
 
 // Tetris pieces (tetrominoes)
 const PIECES = {
@@ -361,38 +362,46 @@ const TetrisGame = () => {
 
             <div className="flex gap-4">
                 {/* Game Board */}
-                <div className="relative">
-                    <div
-                        className="grid gap-0.5 p-4 bg-black border-4 border-gray-600"
-                        style={{gridTemplateColumns: `repeat(${BOARD_WIDTH}, 1fr)`}}
-                    >
-                        {displayBoard.flat().map((cell, index) => (
-                            <div
-                                key={index}
-                                className="w-5 h-5 border border-gray-800"
-                                style={{
-                                    backgroundColor: cell || '#1a1a1a'
-                                }}
-                            />
-                        ))}
-                    </div>
+                <SwipeHandler
+                    onSwipeUp={rotatePieceHandler}
+                    onSwipeDown={() => movePiece('down')}
+                    onSwipeLeft={() => movePiece('left')}
+                    onSwipeRight={() => movePiece('right')}
+                    onLongTouch={hardDrop}
+                >
+                    <div className="relative">
+                        <div
+                            className="grid gap-0.5 p-4 bg-black border-4 border-gray-600"
+                            style={{gridTemplateColumns: `repeat(${BOARD_WIDTH}, 1fr)`}}
+                        >
+                            {displayBoard.flat().map((cell, index) => (
+                                <div
+                                    key={index}
+                                    className="w-5 h-5 border border-gray-800"
+                                    style={{
+                                        backgroundColor: cell || '#1a1a1a'
+                                    }}
+                                />
+                            ))}
+                        </div>
 
-                    {/* Game Over Overlay */}
-                    {gameStatus === 'gameOver' && (
-                        <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
-                            <div className="text-center">
-                                <h2 className="text-3xl font-bold text-red-400 mb-4">GAME OVER</h2>
+                        {/* Game Over Overlay */}
+                        {gameStatus === 'gameOver' && (
+                            <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
+                                <div className="text-center">
+                                    <h2 className="text-3xl font-bold text-red-400 mb-4">GAME OVER</h2>
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        )}
 
-                    {/* Pause Overlay */}
-                    {gameStatus === 'paused' && (
-                        <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
-                            <h2 className="text-3xl font-bold text-yellow-400">PAUSED</h2>
-                        </div>
-                    )}
-                </div>
+                        {/* Pause Overlay */}
+                        {gameStatus === 'paused' && (
+                            <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
+                                <h2 className="text-3xl font-bold text-yellow-400">PAUSED</h2>
+                            </div>
+                        )}
+                    </div>
+                </SwipeHandler>
 
                 {/* Game Info */}
                 <div className="flex flex-col gap-4">
