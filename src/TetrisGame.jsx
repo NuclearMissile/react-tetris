@@ -367,7 +367,7 @@ const TetrisGame = () => {
                     onSwipeDown={() => movePiece('down')}
                     onSwipeLeft={() => movePiece('left')}
                     onSwipeRight={() => movePiece('right')}
-                    onLongTouch={hardDrop}
+                    onDoubleTap={hardDrop}
                 >
                     <div className="relative">
                         <div
