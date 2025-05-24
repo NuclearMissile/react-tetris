@@ -359,7 +359,7 @@ const TetrisGame = () => {
                 <h1 className="text-4xl font-bold mb-6 text-blue-400">TETRIS</h1>
             </a>
 
-            <div className="flex gap-8">
+            <div className="flex gap-4">
                 {/* Game Board */}
                 <div className="relative">
                     <div
@@ -369,7 +369,7 @@ const TetrisGame = () => {
                         {displayBoard.flat().map((cell, index) => (
                             <div
                                 key={index}
-                                className="w-6 h-6 border border-gray-800"
+                                className="w-5 h-5 border border-gray-800"
                                 style={{
                                     backgroundColor: cell || '#1a1a1a'
                                 }}
@@ -395,27 +395,27 @@ const TetrisGame = () => {
                 </div>
 
                 {/* Game Info */}
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-4">
                     {/* Score */}
-                    <div className="bg-gray-800 p-4 rounded">
+                    <div className="bg-gray-800 p-3 rounded">
                         <h3 className="text-xl font-bold mb-2">Score</h3>
                         <p className="text-2xl text-green-400">{score.toLocaleString()}</p>
                     </div>
 
                     {/* Level */}
-                    <div className="bg-gray-800 p-4 rounded">
+                    <div className="bg-gray-800 p-3 rounded">
                         <h3 className="text-xl font-bold mb-2">Level</h3>
                         <p className="text-2xl text-blue-400">{level}</p>
                     </div>
 
                     {/* Lines */}
-                    <div className="bg-gray-800 p-4 rounded">
+                    <div className="bg-gray-800 p-3 rounded">
                         <h3 className="text-xl font-bold mb-2">Lines</h3>
                         <p className="text-2xl text-purple-400">{lines}</p>
                     </div>
 
                     {/* Next Piece */}
-                    <div className="bg-gray-800 p-4 rounded">
+                    <div className="bg-gray-800 p-3 rounded">
                         <h3 className="text-xl font-bold mb-2">Next</h3>
                         {renderNextPiece()}
                     </div>
