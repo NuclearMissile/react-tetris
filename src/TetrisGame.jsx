@@ -333,7 +333,7 @@ const TetrisGame = () => {
     // Render next piece preview
     const renderNextPiece = () => {
         return (
-            <div className="grid grid-cols-4 gap-0.5 w-16 h-16">
+            <div className="grid grid-cols-4 w-16 h-16">
                 {Array(4).fill().map((_, y) =>
                     Array(4).fill().map((_, x) => {
                         const hasBlock = nextPiece ? nextPiece.shape[y] && nextPiece.shape[y][x] : false;
@@ -371,7 +371,7 @@ const TetrisGame = () => {
                 >
                     <div className="relative">
                         <div
-                            className="grid gap-0.5 p-4 bg-black border-4 border-gray-600"
+                            className="grid gap-0.5 p-3 bg-black border-4 border-gray-600"
                             style={{gridTemplateColumns: `repeat(${BOARD_WIDTH}, 1fr)`}}
                         >
                             {displayBoard.flat().map((cell, index) => (
@@ -408,19 +408,19 @@ const TetrisGame = () => {
                     {/* Score */}
                     <div className="bg-gray-800 p-3 rounded">
                         <h3 className="text-xl font-bold mb-2">Score</h3>
-                        <p className="text-2xl text-green-400">{score.toLocaleString()}</p>
+                        <p className="text-xl text-green-400">{score.toLocaleString()}</p>
                     </div>
 
                     {/* Level */}
                     <div className="bg-gray-800 p-3 rounded">
                         <h3 className="text-xl font-bold mb-2">Level</h3>
-                        <p className="text-2xl text-blue-400">{level}</p>
+                        <p className="text-xl text-blue-400">{level}</p>
                     </div>
 
                     {/* Lines */}
                     <div className="bg-gray-800 p-3 rounded">
                         <h3 className="text-xl font-bold mb-2">Lines</h3>
-                        <p className="text-2xl text-purple-400">{lines}</p>
+                        <p className="text-xl text-purple-400">{lines}</p>
                     </div>
 
                     {/* Next Piece */}
