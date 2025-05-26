@@ -385,6 +385,15 @@ const TetrisGame = () => {
                             ))}
                         </div>
 
+                        {/* Waiting Overlay */}
+                        {gameStatus === 'waiting' && (
+                            <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
+                                <div className="text-center">
+                                    <h2 className="text-3xl font-bold text-green-400 mb-4">READY?</h2>
+                                </div>
+                            </div>
+                        )}
+
                         {/* Game Over Overlay */}
                         {gameStatus === 'gameOver' && (
                             <div className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
@@ -436,7 +445,7 @@ const TetrisGame = () => {
                                 onClick={startGame}
                                 className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded"
                             >
-                                Start
+                                {gameStatus === 'waiting' ? 'Start' : 'Retry'}
                             </button>
                         ) : (
                             <button
