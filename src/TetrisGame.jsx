@@ -377,7 +377,7 @@ const TetrisGame = () => {
                             {displayBoard.flat().map((cell, index) => (
                                 <div
                                     key={index}
-                                    className="w-5 h-5 border border-gray-800"
+                                    className="w-6 h-6 border border-gray-800"
                                     style={{
                                         backgroundColor: cell || '#1a1a1a'
                                     }}
@@ -443,14 +443,14 @@ const TetrisGame = () => {
                         {gameStatus === 'waiting' || gameStatus === 'gameOver' ? (
                             <button
                                 onClick={startGame}
-                                className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded"
+                                className="w-24 py-2 bg-green-600 hover:bg-green-700 text-white font-bold rounded"
                             >
                                 {gameStatus === 'waiting' ? 'Start' : 'Retry'}
                             </button>
                         ) : (
                             <button
                                 onClick={togglePause}
-                                className="w-full px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded"
+                                className="w-24 py-2 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded"
                             >
                                 {gameStatus === 'paused' ? 'Resume' : 'Pause'}
                             </button>
