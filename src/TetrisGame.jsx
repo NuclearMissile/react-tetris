@@ -377,7 +377,7 @@ const TetrisGame = () => {
                             {displayBoard.flat().map((cell, index) => (
                                 <div
                                     key={index}
-                                    className="w-6 h-6 border border-gray-800"
+                                    className="w-5.5 h-5.5 border border-gray-800"
                                     style={{
                                         backgroundColor: cell || '#1a1a1a'
                                     }}
